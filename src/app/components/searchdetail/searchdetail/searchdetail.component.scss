@@ -1,0 +1,38 @@
+img
+{
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+}
+.btn-close
+{
+    color: antiquewhite;
+}
+.cast
+{
+    margin: 10px;
+}
+.container > .row{
+    margin-bottom: 10px;
+}
+.spinner{
+    margin-left: 45%;
+    margin-top: 20%;
+    display: inline-block;
+}
+
+//---------------- Mobile devices-----------------------
+@media only screen and (max-width: 600px) {
+    .container > .row{
+        display: flex;
+        flex-direction: column-reverse;
+
+        .btn-close{
+            margin-left: 90%;
+        }
+    }
+  }

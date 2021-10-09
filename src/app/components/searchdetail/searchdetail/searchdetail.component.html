@@ -1,0 +1,27 @@
+<div class="container">
+    <div *ngIf="data == null" class="spinner">
+        <div class="spinner-border" role="status">
+        </div>
+        <p>loading..</p>
+    </div>
+    <div *ngIf="data != null" class="row">
+        <img src="{{constants.POSTER_BASE_URL}}{{data.poster_path}}"
+             onerror="this.onerror=null;this.src='/assets/icons/default.jpg'">
+        <button type="button"
+                class="btn-close btn-close-white"
+                aria-label="Close Button"
+                (click)="navigateToPreviousState()"></button>
+    </div>
+
+    <div class="row">
+        <div class="description">
+            <p>{{data.overview}}</p>
+        </div>
+
+    </div>
+    <div style="display: flex;">
+        <div *ngFor="let member of data.credits.cast" class="cast">
+            <a *ngIf="member.popularity > 10" [routerLink]="['/castDetail', 'PERSON' , member.id]">{{member.name}}</a>
+        </div>
+    </div>
+</div>

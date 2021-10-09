@@ -1,0 +1,34 @@
+
+<div class="container SearchComponent">
+    <div class="row searchFields">
+      <!-- <div class="col">
+        <input type="search" 
+                   class="form-control rounded"
+                   id="input"
+                  (keypress)="updateState($event)"
+                  (keydown)="updateState($event)"
+                  [(ngModel)]="searchText"
+                   placeholder="Search" 
+                   aria-label="Type here to search for movies and shows"
+                   aria-describedby="search-addon"/>
+      </div> -->
+      <div class="col">
+        <input type="search" 
+                   class="form-control rounded"
+                   id="input"
+                   (keypress)="fetchContent(searchText)"
+                   (keydown)="updateState($event)"
+                   [(ngModel)]="searchText"
+                   placeholder="Search" 
+                   aria-label="Type here to search for movies and shows"
+                   aria-describedby="search-addon"/>
+      </div>
+      <div class="col">
+        <button role="button" 
+                class="btn btn-primary"
+                (click)="fetchContent(searchText)"
+                aria-label="Search button to search your movie or shows">Search</button>
+      </div>
+    </div>
+  </div>
+  <app-searchlist></app-searchlist>

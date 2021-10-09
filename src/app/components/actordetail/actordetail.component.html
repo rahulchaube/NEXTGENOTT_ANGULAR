@@ -1,0 +1,20 @@
+<div class="row">
+    <div *ngFor="let item of castList; index as i;" class="actorContanier">
+        <div class="card-body" (click)="navigateToDetails('movie', item.id)">
+            <div *ngIf="item.backdrop_path != null"class="media">
+              <img alt="Poster image unavailable"
+                   src="{{constants.POSTER_BASE_URL}}{{item.backdrop_path}}"
+                   onerror="this.onerror=null;this.src='/assets/icons/default.jpg'">
+            </div>
+            <div *ngIf="item.backdrop_path == null" class="media">
+              <img alt="Poster image unavailable"
+                   src="{{constants.POSTER_BASE_URL}}{{item.poster_path}}"
+                   onerror="this.onerror=null;this.src='/assets/icons/default.jpg'">
+            </div>
+            <div class="caption">
+              <h2>{{item.title}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
